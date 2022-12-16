@@ -49,9 +49,9 @@
 - On successfull response Returnd token and used data.
 
 
-### POST /login
+### PUT  /user/:id
 
-- first request will go into authentication, once authentication success request will go to controller.
+- first request will go into authentication, once authentication success request will go to user controller.
 - validation will be performed on input data then updated inside database. and updated data will be send to user.
 
 
@@ -75,4 +75,27 @@
 }
 
 ```
+### POST /upload-document
 
+- Request will go into the authentication,once authentication success request will go to document controller.
+- Document (pdf,xlsx,csv) will be recieved in the request. 
+- Available storage on user cloude and incoming file size will be checked and then doc will uploaded on aws S3.
+- URL from aws s3 will be stored on document with user id.
+
+### GET /documents
+
+- Request will go into the authentication,once authentication success request will go to document controller.
+- All document with idDeleted:false key will be fetched and sent back to the user.
+
+
+### GET  /documents/:documentid/to-text
+
+- Request will go into the authentication,once authentication success request will go to document controller.
+- Document with the params document id will be fetched.
+- Document will be converted into text and finally text will be sent to user.
+
+### DELETE /documents/:documentid
+
+- Request will go into the authentication,once authentication success request will go to document controller.
+- Document with the params document id will be fetched.
+- isDeleted:false key will be updated to true and storage deail will be updated based on file size.
