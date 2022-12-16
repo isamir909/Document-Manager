@@ -115,13 +115,10 @@ const toText = async (req, res) => {
 
 const deleteDocument = async (req, res) => {
   try {
-    // console.log(req);
+ 
     let params = req.params.documentid.toString();
-    console.log(params);
-   
     let userId = req.body.userid;
    
-
     let getDocument = await documentModel.findById(params);
     if (!getDocument)
       return res.status(404).send({ status: false, message: "file not found" });
@@ -138,13 +135,10 @@ const deleteDocument = async (req, res) => {
 
     // updating storage data on user
     let getUser = await userModel.findById(userId).lean();
-    console.log(getUser);
+  
     getUser.availableStorage = (
       Number(getUser.availableStorage) + Number(getDocument.fileSize)
     ).toFixed(2);
-
-
-    console.log(getUser,"before");
 
     let updateUser = await userModel.findOneAndUpdate(
       { _id: userId },
@@ -152,7 +146,6 @@ const deleteDocument = async (req, res) => {
       { new: true }
     );
 
-    console.log(updateUser,"updated");
     let data = {
       availableStorage: updateUser.availableStorage,
     };

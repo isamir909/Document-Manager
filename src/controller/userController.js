@@ -11,7 +11,7 @@ const register=async(req,res)=>{
 
     let data=req.body
     let file=req.files
-    console.log(data,file);
+   
     if(!data.name || !data.email || !data.password || !data.phone)return res.status(400).send({status:false,message:"please fill up all fields"})
     if(!validator.isAlpha(data.name))return res.status(400).send({status:false,message:"name must be between A-Z or a-z"})
     if(!validator.isEmail (data.email))return res.status(400).send({status:false,message:"email should be valid"})
@@ -72,7 +72,7 @@ const updateUser=async (req,res)=>{
   try {
     let data=req.body
     let userId=req.body.userid
-console.log(data);
+
     let findUser=await userModel.findById(userId).lean()
     if(!findUser)return res.status(404).send({status:false,message:"user not found"})
 
@@ -93,7 +93,7 @@ console.log(data);
     }
 
     const updatedData=await userModel.findOneAndUpdate({_id:userId},{$set:findUser},{new:true})
-    console.log(updatedData);
+
 
     return res.status(200).send({status:true,message:"data updated successfully",data:updatedData})
   } catch (error) {
