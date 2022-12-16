@@ -21,7 +21,7 @@ const Register = () => {
     formData.append('phone', phone )
     formData.append('password', password )
     formData.append('profilePicture', profilePicture )
-
+    if(confirmPassword!==password){windowAlert("password and confirm password should be same")}
     const options = {
         headers:{
             "Content-Type":"multipart/form-data",
