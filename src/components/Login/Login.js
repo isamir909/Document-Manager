@@ -45,6 +45,7 @@ const Login = () => {
           loginData.data.availableStorage
         );
         navigation("/");
+        window.location.reload(false)
       })
       .catch((err) => {
         console.log(err);

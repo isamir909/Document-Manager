@@ -7,6 +7,7 @@ const NavBar = () => {
   const token = localStorage.getItem("token");
   const logout=()=>{
     localStorage.clear() 
+    window.location.reload(false)
    
 }
   const id=localStorage.id
