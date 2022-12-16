@@ -1,7 +1,7 @@
 # Doc Manager
 
 ## Demo Video
-(https://drive.google.com/file/d/1cVgBRKZT4afUcIvUbnOfzqZiiBoq8y7M/view?usp=share_link)
+(https://www.dropbox.com/s/yznvsmpf0avvt42/Samir_lohiya_9909779216.mp4?dl=0)
 
 ## Project Description 
 
