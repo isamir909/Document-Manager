@@ -53,7 +53,7 @@ const Profile = () => {
         <div className="profile">
           <img
             alt="userImage"
-            src={require(`../../assets/images/profile.jpg`) || Profile}
+            src={ Profile || require(`../../assets/images/profile.jpg`)}
           />
           <br />
         </div>
