@@ -1,0 +1,31 @@
+*{
+  margin: 0 0;
+
+}
+.home-container{
+	display: flex;
+  gap: 17%;
+	min-height: 100vh;
+  font-family: sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  color: white;
+}
+
+.upload-file{
+  display: flex;
+  margin-top: 1%;
+  padding: 30px;
+  text-align: center;
+  border: 3px solid white;
+  height: 30%;
+  width: 30%;
+  display:inline-block;
+}
+
+.upload-file label{
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.upload-file input{
+  color: black;
+}
